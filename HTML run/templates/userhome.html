@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome Farmer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+</head>
+
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+    .navbar {
+      width: 100%;
+      background-color: #555;
+      overflow: auto;
+    }
+
+    .navbar a {
+      float: left;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .navbar a:hover {
+      background-color: #000;
+    }
+
+    .active {
+      background-color: #4CAF50;
+    }
+
+    @media screen and (max-width: 500px) {
+      .navbar a {
+        float: none;
+        display: block;
+      }
+    }
+</style>
+
+<body>
+
+<div class="navbar">
+  <a class="active" href="/beta/"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="/"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+</div>
+
+<div class="container">
+
+  <div class="jumbotron">
+    <h1>You are in, Farmer.</h1>      
+    <p>Monitor the conditions of your crops here. Every single area plot to its Temperature , Pressure and Light Intensity.</p>
+  </div>
+
+  <div class="container pb-3">
+      <div class="row">
+          <div class="col-sm-6 pb-3">
+              <a href="/subs/" class="btn btn-primary" style="width:100%;">LIVE DATA</a>
+          </div>
+
+          <div class="col-sm-6 pb-3">
+              <a href="/subsearch/" class="btn btn-primary" style="width:100%;" ">Search Data</a>
+          </div>
+      </div>
+
+  </div>       
+</div>
+
+
+
+</body>
+</html>

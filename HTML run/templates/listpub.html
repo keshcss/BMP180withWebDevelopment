@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+   <head>
+       <title>Show LIVE Data</title>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+       <meta http-equiv = "refresh" content = "2" />
+   </head>
+   
+   <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+        .navbar {
+          width: 100%;
+          background-color: #555;
+          overflow: auto;
+          position: fixed;
+          top: 0;
+        }
+
+        .navbar a {
+          float: left;
+          padding: 12px;
+          color: white;
+          text-decoration: none;
+          font-size: 17px;
+        }
+
+        .navbar a:hover {
+          background-color: #000;
+        }
+
+        .active {
+          background-color: #4CAF50;
+        }
+
+        @media screen and (max-width: 500px) {
+          .navbar a {
+            float: none;
+            display: block;
+          }
+        }
+
+        .main {
+          margin-top: 100px; /* Add a top margin to avoid content overlay */
+        }
+    </style>
+
+   <body>
+      <div class="navbar pb-3">
+          <a class="active" href="/userhome/"><i class="fa fa-fw fa-home"></i> Home</a> 
+          <a href="/"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+      </div>  
+      <div class="main">
+          <div class="container pb-3">
+              <h2><b>LIVE DATA</b></h2>
+              <p>View Live Data Here:</p>            
+              <table class="table table-striped">
+              
+                <thead>
+                
+                  <tr>
+                    <th>Device ID</th>
+                    <th>Temperature</th>
+                    <th>Pressure</th>
+                    <th>Light</th>
+                    <th>Time</th>
+                  </tr>
+                  
+                </thead>
+                
+                <tbody>
+                  {% for row in rows %}
+                  <tr>
+                    <td>{{row["Reading"]}}</td>
+                    <td>{{row["Temperature"]}}</td>
+                    <td>{{ row["Pressure"]}}</td>
+                    <td>{{ row["Light"]}}</td>
+                    <td>{{ row["Time"]}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+                
+              </table>
+            </div>
+      </div>
+      <a href = "/">Go back to home page</a>
+   </body>
+</html>
